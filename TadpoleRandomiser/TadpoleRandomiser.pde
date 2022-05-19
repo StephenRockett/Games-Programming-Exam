@@ -1,4 +1,6 @@
 float changer = 0;
+float wordLengthF = 1;
+int wordLengthI = 1;
 
 int N1 = 0;
 float n1 = 0;
@@ -49,22 +51,38 @@ void Colour(){
   if (keyPressed == false) {
     keyWasPressedC = false;
   }
-  
+  fill(changer, 200, 200);
   stroke(changer, 200, 200);
-  
 }
 
 void Name() {
-
+  
   if (keyPressed == true && keyWasPressedN == false){
     if (key == ' '){
     n1 = random(0, 4);
+    n2 = random(0, 4);
+    n3 = random(0, 4);
+    n4 = random(0, 4);
+    wordLengthF = random(1.5, 5);
     keyWasPressedN = true;
     }
   }
   if (keyPressed == false) {
     keyWasPressedN = false;
     
+  }
+  
+  if (wordLengthF < 2){
+    wordLengthI = 1;
+  }
+  if (wordLengthF < 3 && wordLengthF > 2){
+    wordLengthI = 2;
+  }
+  if (wordLengthF > 3 && wordLengthF < 4){
+    wordLengthI = 3;
+  }
+  if (wordLengthF > 4){
+    wordLengthI = 4;
   }
   
   if (n1 < 1){
@@ -136,17 +154,17 @@ Name1[2] = "Furry";
 Name1[3] = "Large";
 Name1[4] = "Spiny";
 
-Name2[0] = "Jungle";
-Name2[1] = "Toxic";
+Name2[0] = "Purple";
+Name2[1] = "Blue";
 Name2[2] = "Green";
 Name2[3] = "Yellow";
 Name2[4] = "Red";
 
-Name3[0] = "Back";
-Name3[1] = "- Eyed";
-Name3[2] = "Footed";
-Name3[3] = "Limbed";
-Name3[4] = "Toed";
+Name3[0] = "Desert";
+Name3[1] = "Jungle";
+Name3[2] = "Toxic";
+Name3[3] = "Forest";
+Name3[4] = "Arctic";
 
 Name4[0] = "Frog";
 Name4[1] = "Toad";
@@ -154,7 +172,31 @@ Name4[2] = "BullFrog";
 Name4[3] = "Tadpole";
 Name4[4] = "Salamander";
 
-text (Name1[N1], width/2, height/2);
+
+textAlign(CENTER, BOTTOM);
+textSize(24);
+
+if (wordLengthI == 1){
+text (Name4[N4], width/2, 60);
+}
+
+if (wordLengthI == 2){
+text (Name4[N4], width/2 + 40, 60);
+text (Name3[N3], width/2 - 40, 60);
+}
+
+if (wordLengthI == 3){
+text (Name4[N4], width/2 + 80, 60);
+text (Name3[N3], width/2, 60);
+text (Name2[N2], width/2 - 80, 60);
+}
+
+if (wordLengthI == 4){
+text (Name4[N4], width/2 + 120, 60);
+text (Name3[N3], width/2 + 40, 60);
+text (Name2[N2], width/2 - 40, 60);
+text (Name1[N1], width/2 -120, 60);
+}
   
   
   
@@ -162,3 +204,4 @@ text (Name1[N1], width/2, height/2);
 }
 
 //https://processing.org/reference/keyPressed_.html
+//https://processing.org/reference/textAlign_.html
