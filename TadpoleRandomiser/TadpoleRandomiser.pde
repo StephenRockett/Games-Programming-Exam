@@ -39,7 +39,7 @@ void setup() {
 
 
 void draw() {
-  background (50);
+  background (0);
   
   Colour();
   Body();
@@ -119,16 +119,56 @@ void Body(){
     num = 10;
   }
 
-  for (int i = 0; i < num; i ++) { 
-    circle (width/2, height/2 + offset[i], 35);
-    
-    if (hasLegs == true){
+  for (int i = 0; i < num; i ++) {  
+    if (hasLegs == true){    
+noFill();
+stroke(changer, 200, 200);
     line (width/2 - 30, height/2 + offset[i], width/2 - 17.5, height/2 + offset[i]);
     line (width/2 + 30, height/2 + offset[i], width/2 + 17.5, height/2 + offset[i]);
+    
+fill (0);
+noStroke();
+        if (num == 10){
+    rect(width/2 -35, (height/2 - 17.5) - 140, 70, 35);
     }
-  }
-  
+        if (num == 9){
+    rect(width/2 -35, (height/2 - 17.5) - 140, 70, 35);
+    }
+        if (num == 8){
+    rect(width/2 -35, (height/2 - 17.5) - 105, 70, 35);
+    }
+        if (num == 7){
+    rect(width/2 -35, (height/2 - 17.5) - 105, 70, 35);
+    }
+        if (num == 6){
+    rect(width/2 -35, (height/2 - 17.5) - 70, 70, 35);
+    }
+        if (num == 5){
+    rect(width/2 -35, (height/2 - 17.5) - 70, 70, 35);
+    }
+        if (num == 4){
+    rect(width/2 -35, (height/2 - 17.5) - 35, 70, 35);
+    }
+        if (num == 3){
+    rect(width/2 -35, (height/2 - 17.5) - 35, 70, 35);
+    }
+        if (num == 2){
+    rect(width/2 -35, (height/2 - 17.5) - 0, 70, 35);
+    }
+        if (num == 1){
+    rect(width/2 -35, (height/2 - 17.5) - 0, 70, 35);
+    }
+    }
+
+    }
+for (int i = 0; i < num; i ++) {
+  noFill();
+stroke(changer, 200, 200);   
+
+  circle (width/2, height/2 + offset[i], 35); 
 }
+  }
+
 
 void Name() {
   fill(changer, 200, 200);
