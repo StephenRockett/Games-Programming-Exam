@@ -2,6 +2,9 @@ float changer = 0;
 float wordLengthF = 1;
 int wordLengthI = 1;
 
+int num = 10;
+float [] tadpoleLength = new float[num];
+
 int N1 = 0;
 float n1 = 0;
 String [] Name1 = new String[5];
@@ -32,7 +35,7 @@ void draw() {
   background (50);
   
   Colour();
-  
+  Body();
   
   Name();
   
@@ -51,12 +54,35 @@ void Colour(){
   if (keyPressed == false) {
     keyWasPressedC = false;
   }
-  fill(changer, 200, 200);
+  
   stroke(changer, 200, 200);
 }
 
-void Name() {
+void Body(){
   
+  noFill();
+  strokeWeight(2);
+  
+  circle (width/2, height/2, 35);
+  
+  /* Test
+  circle (width/2, height/2 + 175, 35);
+    circle (width/2, height/2 + 140, 35);
+      circle (width/2, height/2 + 105, 35);
+        circle (width/2, height/2 + 70, 35);
+          circle (width/2, height/2 + 35, 35);
+  circle (width/2, height/2 - 0, 35);
+    circle (width/2, height/2 - 35, 35);
+      circle (width/2, height/2 - 70, 35);
+        circle (width/2, height/2 - 105, 35);
+   */
+        
+
+  
+}
+
+void Name() {
+  fill(changer, 200, 200);
   if (keyPressed == true && keyWasPressedN == false){
     if (key == ' '){
     n1 = random(0, 4);
