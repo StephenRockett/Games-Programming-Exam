@@ -1,3 +1,5 @@
+//Stephen Rockett - C21354883
+
 float changer = 0, wordLengthF = 1;
 int wordLengthI, num;
 
@@ -13,9 +15,10 @@ String [] Name3 = new String[5];
 String [] Name4 = new String[5];
 String [] Name5 = new String[5];
 
-boolean keyWasPressedC, keyWasPressedN, keyWasPressedB, keyWasPressedG, hasLegs;
+boolean keyWasPressedC, keyWasPressedN, keyWasPressedB, keyWasPressedG, keyWasPressedE, hasLegs;
 
-float gend, partOffset;
+float gend, partOffset, eyeOffset, eyesF;
+int eyes;
 boolean m, f, h, n;
 
 
@@ -30,6 +33,7 @@ void draw() {
   Colour();
   Body();
   Gender();
+  Eyes();
   Name();
 }
 
@@ -238,6 +242,200 @@ void Gender() {
     circle (width/2, height/2 + partOffset, 15); 
     line (width/2, height/2 + 17.5 + partOffset, width/2, height/2 + partOffset + 30);
     circle (width/2, height/2 + 34 + partOffset, 8);  
+  }
+  
+}
+
+void Eyes() {
+  
+  if (keyPressed == true && keyWasPressedE == false) {
+    if (key == ' ') {
+      eyesF = random(0, 10);
+
+      keyWasPressedE = true;
+    }
+  }
+  if (keyPressed == false) {
+    keyWasPressedE = false;
+  }
+  
+  if (eyesF < 1){
+    eyes = 0;
+  }
+  if (eyesF < 2 && eyesF > 1){
+    eyes = 1;
+  }
+  if (eyesF < 3 && eyesF > 2){
+    eyes = 2;
+  }
+  if (eyesF < 4 && eyesF > 3){
+    eyes = 3;
+  }
+  if (eyesF < 5 && eyesF > 4){
+    eyes = 4;
+  }
+  if (eyesF < 6 && eyesF > 5){
+    eyes = 5;
+  }
+  if (eyesF < 7 && eyesF > 6){
+    eyes = 6;
+  }
+  if (eyesF < 8 && eyesF > 7){
+    eyes = 7;
+  }
+  if (eyesF < 9 && eyesF > 8){
+    eyes = 8;
+  }
+  if (eyesF > 9){
+    eyes = 9;
+  }
+  
+     if (num == 1) {
+        eyeOffset = -35;
+   }
+      if (num == 2) {
+        eyeOffset = -35;
+   }
+      if (num == 3) {
+        eyeOffset = -70;
+   }
+      if (num == 4) {
+        eyeOffset = -70;
+   }
+      if (num == 5) {
+        eyeOffset = -105;
+   }
+      if (num == 6) {
+        eyeOffset = -105;
+   }
+      if (num == 7) {
+        eyeOffset = -140;
+   }
+      if (num == 8) {
+        eyeOffset = -140;
+   }
+      if (num == 9) {
+        eyeOffset = -175;
+   }
+      if (num == 10) {
+        eyeOffset = -175;
+   }
+  
+  if (eyes == 1){
+  circle (width/2, height/2 + eyeOffset - 10, 8); //center
+  line (width/2, height/2 + eyeOffset - 6, width/2, height/2 + eyeOffset + 15); // center
+  }
+  if (eyes == 2){
+  circle (width/2 + 17.5, height/2 + eyeOffset, 8); //CmidR
+  circle (width/2 - 17.5, height/2 + eyeOffset, 8); //CmidR
+  line (width/2 + 16.5, height/2 + eyeOffset + 3, width/2 + 6.5, height/2 + eyeOffset + 20); //CmidR
+  line (width/2 - 16.5, height/2 + eyeOffset + 3, width/2 - 6.5, height/2 + eyeOffset + 20); //CmidL  
+  }
+  
+  if (eyes == 3) {
+  circle (width/2, height/2 + eyeOffset - 10, 8); //center
+  circle (width/2 + 17.5, height/2 + eyeOffset, 8); //CmidR
+  circle (width/2 - 17.5, height/2 + eyeOffset, 8); //CmidR
+  line (width/2, height/2 + eyeOffset - 6, width/2, height/2 + eyeOffset + 15); // center
+  line (width/2 + 16.5, height/2 + eyeOffset + 3, width/2 + 6.5, height/2 + eyeOffset + 20); //CmidR
+  line (width/2 - 16.5, height/2 + eyeOffset + 3, width/2 - 6.5, height/2 + eyeOffset + 20); //CmidL   
+  }
+  
+  if (eyes == 4) {
+  circle (width/2 + 17.5, height/2 + eyeOffset, 8); //CmidR
+  circle (width/2 - 17.5, height/2 + eyeOffset, 8); //CmidR
+  circle (width/2 + 35, height/2 + eyeOffset + 10, 8); //midR
+  circle (width/2 - 35, height/2 + eyeOffset + 10, 8); //midL
+  line (width/2 + 33, height/2 + eyeOffset + 12, width/2 + 13, height/2 + eyeOffset + 25); //midR
+  line (width/2 - 33, height/2 + eyeOffset + 12, width/2 - 13, height/2 + eyeOffset + 25); //midL
+  line (width/2 + 16.5, height/2 + eyeOffset + 3, width/2 + 6.5, height/2 + eyeOffset + 20); //CmidR
+  line (width/2 - 16.5, height/2 + eyeOffset + 3, width/2 - 6.5, height/2 + eyeOffset + 20); //CmidL 
+  }
+  
+  if (eyes == 5) {
+  circle (width/2, height/2 + eyeOffset - 10, 8); //center
+  circle (width/2 + 17.5, height/2 + eyeOffset, 8); //CmidR
+  circle (width/2 - 17.5, height/2 + eyeOffset, 8); //CmidR
+  line (width/2, height/2 + eyeOffset - 6, width/2, height/2 + eyeOffset + 15); // center
+  circle (width/2 + 35, height/2 + eyeOffset + 10, 8); //midR
+  circle (width/2 - 35, height/2 + eyeOffset + 10, 8); //midL
+  line (width/2 + 33, height/2 + eyeOffset + 12, width/2 + 13, height/2 + eyeOffset + 25); //midR
+  line (width/2 - 33, height/2 + eyeOffset + 12, width/2 - 13, height/2 + eyeOffset + 25); //midL
+  line (width/2 + 16.5, height/2 + eyeOffset + 3, width/2 + 6.5, height/2 + eyeOffset + 20); //CmidR
+  line (width/2 - 16.5, height/2 + eyeOffset + 3, width/2 - 6.5, height/2 + eyeOffset + 20); //CmidL 
+  }
+  
+  if (eyes == 6) {
+  circle (width/2 + 35, height/2 + eyeOffset + 10, 8); //midR
+  circle (width/2 + 38.5, height/2 + eyeOffset + 30, 8); //CmidR
+  circle (width/2 + 17.5, height/2 + eyeOffset, 8); //EmidL
+  circle (width/2 - 35, height/2 + eyeOffset + 10, 8); //midL
+  circle (width/2 - 38.5, height/2 + eyeOffset + 30, 8); //CmidL
+  circle (width/2 - 17.5, height/2 + eyeOffset, 8); //EmidL
+  line (width/2 + 33, height/2 + eyeOffset + 12, width/2 + 13, height/2 + eyeOffset + 25); //midR
+  line (width/2 - 33, height/2 + eyeOffset + 12, width/2 - 13, height/2 + eyeOffset + 25); //midL
+  line (width/2 + 16.5, height/2 + eyeOffset + 3, width/2 + 6.5, height/2 + eyeOffset + 20); //EmidR
+  line (width/2 - 16.5, height/2 + eyeOffset + 3, width/2 - 6.5, height/2 + eyeOffset + 20); //EmidL
+  line (width/2 + 36, height/2 + eyeOffset + 31, width/2 + 14.5, height/2 + eyeOffset + 34.5); //CmidR
+  line (width/2 - 36, height/2 + eyeOffset + 31, width/2 - 14.5, height/2 + eyeOffset + 34.5); //CmidL 
+  }
+  
+  if (eyes == 7) {
+  circle (width/2, height/2 + eyeOffset - 10, 8); //center
+  circle (width/2 + 35, height/2 + eyeOffset + 10, 8); //midR
+  circle (width/2 + 38.5, height/2 + eyeOffset + 30, 8); //CmidR
+  circle (width/2 + 17.5, height/2 + eyeOffset, 8); //EmidR
+  circle (width/2 - 35, height/2 + eyeOffset + 10, 8); //midL
+  circle (width/2 - 38.5, height/2 + eyeOffset + 30, 8); //CmidL
+  circle (width/2 - 17.5, height/2 + eyeOffset, 8); //EmidL
+  line (width/2, height/2 + eyeOffset - 6, width/2, height/2 + eyeOffset + 15); // center
+  line (width/2 + 33, height/2 + eyeOffset + 12, width/2 + 13, height/2 + eyeOffset + 25); //midR
+  line (width/2 - 33, height/2 + eyeOffset + 12, width/2 - 13, height/2 + eyeOffset + 25); //midL
+  line (width/2 + 16.5, height/2 + eyeOffset + 3, width/2 + 6.5, height/2 + eyeOffset + 20); //EmidR
+  line (width/2 - 16.5, height/2 + eyeOffset + 3, width/2 - 6.5, height/2 + eyeOffset + 20); //EmidL
+  line (width/2 + 36, height/2 + eyeOffset + 31, width/2 + 14.5, height/2 + eyeOffset + 34.5); //CmidR
+  line (width/2 - 36, height/2 + eyeOffset + 31, width/2 - 14.5, height/2 + eyeOffset + 34.5); //CmidL
+  }
+  
+  if (eyes == 8){
+  circle (width/2 + 42, height/2 + eyeOffset + 50, 8); //endR
+  circle (width/2 + 35, height/2 + eyeOffset + 10, 8); //midR
+  circle (width/2 + 38.5, height/2 + eyeOffset + 30, 8); //CmidR
+  circle (width/2 + 17.5, height/2 + eyeOffset, 8); //EmidR
+  circle (width/2 - 42, height/2 + eyeOffset + 50, 8); //endL
+  circle (width/2 - 35, height/2 + eyeOffset + 10, 8); //midL
+  circle (width/2 - 38.5, height/2 + eyeOffset + 30, 8); //CmidL
+  circle (width/2 - 17.5, height/2 + eyeOffset, 8); //EmidL
+  line (width/2 + 39, height/2 + eyeOffset + 50, width/2 + 16, height/2 + eyeOffset + 44); //endR
+  line (width/2 - 39, height/2 + eyeOffset + 50, width/2 - 16, height/2 + eyeOffset + 44); //endL
+  line (width/2 + 33, height/2 + eyeOffset + 12, width/2 + 13, height/2 + eyeOffset + 25); //midR
+  line (width/2 - 33, height/2 + eyeOffset + 12, width/2 - 13, height/2 + eyeOffset + 25); //midL
+  line (width/2 + 16.5, height/2 + eyeOffset + 3, width/2 + 6.5, height/2 + eyeOffset + 20); //EmidR
+  line (width/2 - 16.5, height/2 + eyeOffset + 3, width/2 - 6.5, height/2 + eyeOffset + 20); //EmidL
+  line (width/2 + 36, height/2 + eyeOffset + 31, width/2 + 14.5, height/2 + eyeOffset + 34.5); //CmidR
+  line (width/2 - 36, height/2 + eyeOffset + 31, width/2 - 14.5, height/2 + eyeOffset + 34.5); //CmidL
+  }
+  
+  
+  if (eyes == 9){
+  circle (width/2, height/2 + eyeOffset - 10, 8); //center
+  circle (width/2 + 42, height/2 + eyeOffset + 50, 8); //endR
+  circle (width/2 + 35, height/2 + eyeOffset + 10, 8); //midR
+  circle (width/2 + 38.5, height/2 + eyeOffset + 30, 8); //CmidR
+  circle (width/2 + 17.5, height/2 + eyeOffset, 8); //EmidR
+  circle (width/2 - 42, height/2 + eyeOffset + 50, 8); //endL
+  circle (width/2 - 35, height/2 + eyeOffset + 10, 8); //midL
+  circle (width/2 - 38.5, height/2 + eyeOffset + 30, 8); //CmidL
+  circle (width/2 - 17.5, height/2 + eyeOffset, 8); //EmidL
+  line (width/2, height/2 + eyeOffset - 6, width/2, height/2 + eyeOffset + 15); // center
+  line (width/2 + 39, height/2 + eyeOffset + 50, width/2 + 16, height/2 + eyeOffset + 44); //endR
+  line (width/2 - 39, height/2 + eyeOffset + 50, width/2 - 16, height/2 + eyeOffset + 44); //endL
+  line (width/2 + 33, height/2 + eyeOffset + 12, width/2 + 13, height/2 + eyeOffset + 25); //midR
+  line (width/2 - 33, height/2 + eyeOffset + 12, width/2 - 13, height/2 + eyeOffset + 25); //midL
+  line (width/2 + 16.5, height/2 + eyeOffset + 3, width/2 + 6.5, height/2 + eyeOffset + 20); //EmidR
+  line (width/2 - 16.5, height/2 + eyeOffset + 3, width/2 - 6.5, height/2 + eyeOffset + 20); //EmidL
+  line (width/2 + 36, height/2 + eyeOffset + 31, width/2 + 14.5, height/2 + eyeOffset + 34.5); //CmidR
+  line (width/2 - 36, height/2 + eyeOffset + 31, width/2 - 14.5, height/2 + eyeOffset + 34.5); //CmidL
   }
   
 }
