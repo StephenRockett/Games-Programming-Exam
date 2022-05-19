@@ -134,11 +134,12 @@ void Name() {
   fill(changer, 200, 200);
   if (keyPressed == true && keyWasPressedN == false){
     if (key == ' '){
-    n1 = random(0, 5);
-    n2 = random(0, 5);
-    n3 = random(0, 5);
-    n4 = random(0, 5);
-    wordLengthF = random(1.5, 5);
+    n1 = random(0, 6);
+    n2 = random(0, 6);
+    n3 = random(0, 6);
+    n4 = random(0, 6);
+    n5 = random(0, 6);
+    wordLengthF = random(1, 6);
     keyWasPressedN = true;
     }
   }
@@ -150,14 +151,17 @@ void Name() {
   if (wordLengthF < 2){
     wordLengthI = 1;
   }
-  if (wordLengthF < 3 && wordLengthF > 2){
+  if (wordLengthF > 2 && wordLengthF < 3){
     wordLengthI = 2;
   }
   if (wordLengthF > 3 && wordLengthF < 4){
     wordLengthI = 3;
   }
-  if (wordLengthF > 4){
+  if (wordLengthF > 4 && wordLengthF < 5){
     wordLengthI = 4;
+  }
+  if (wordLengthF < 5){
+    wordLengthI = 5;
   }
   
   if (n1 < 1){
@@ -224,7 +228,7 @@ void Name() {
     N4 = 4;
   }
   
-    if (n5 < 1){
+  if (n5 < 1){
     N5 = 0;
   }
   if (n5 < 2 && n5 > 1){
@@ -239,8 +243,6 @@ void Name() {
   if (n5 < 5 && n5 > 4){
     N5 = 4;
   }
-
-
 
 Name1[0] = "Hungry";
 Name1[1] = "Giga";
@@ -270,7 +272,7 @@ Name5[0] = "Frog";
 Name5[1] = "Toad";
 Name5[2] = "BullFrog";
 Name5[3] = "Tadpole";
-Name5[4] = "Salamander";
+Name5[4] = "Newt";
 
 
 textAlign(CENTER, BOTTOM);
@@ -305,9 +307,6 @@ text (Name3[N3], width/2, 60);
 text (Name2[N2], width/2 - 80, 60);
 text (Name1[N1], width/2 - 160, 60);
 }
-  
-  
-  
   
 }
 
