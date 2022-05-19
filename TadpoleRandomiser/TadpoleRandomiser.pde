@@ -3,6 +3,7 @@ float wordLengthF = 1;
 int wordLengthI = 1;
 
 float numF = 11;
+float hasLegsF = 0;
 int num = 10;
 float [] tadpoleLength = new float[num];
 float [] offset = {0, 35, -35, 70, -70, 105, -105, 140, -140, 175};
@@ -19,17 +20,20 @@ String [] Name3 = new String[5];
 int N4 = 0;
 float n4 = 0;
 String [] Name4 = new String[5];
-  
+int N5 = 0;
+float n5 = 0;
+String [] Name5 = new String[5];
+
 boolean keyWasPressedC;
 boolean keyWasPressedN;
 boolean keyWasPressedB;
+boolean hasLegs;
 
 
 
 void setup() {
   size(500, 500);
 
-  
   
 }
 
@@ -66,6 +70,7 @@ void Body(){
   if (keyPressed == true && keyWasPressedB == false){
     if (key == ' '){
     numF = random(1, 11);
+    hasLegsF = random(0, 2);
     keyWasPressedB = true;
     }
   }
@@ -75,6 +80,13 @@ void Body(){
 
   noFill();
   strokeWeight(2);
+  
+  if (hasLegsF < 1){
+    hasLegs = false;
+  }
+  else {
+    hasLegs = true;
+  }
   
   if (numF < 2){
     num = 1;
@@ -109,6 +121,11 @@ void Body(){
 
   for (int i = 0; i < num; i ++) { 
     circle (width/2, height/2 + offset[i], 35);
+    
+    if (hasLegs == true){
+    line (width/2 - 30, height/2 + offset[i], width/2 - 17.5, height/2 + offset[i]);
+    line (width/2 + 30, height/2 + offset[i], width/2 + 17.5, height/2 + offset[i]);
+    }
   }
   
 }
@@ -117,10 +134,10 @@ void Name() {
   fill(changer, 200, 200);
   if (keyPressed == true && keyWasPressedN == false){
     if (key == ' '){
-    n1 = random(0, 4);
-    n2 = random(0, 4);
-    n3 = random(0, 4);
-    n4 = random(0, 4);
+    n1 = random(0, 5);
+    n2 = random(0, 5);
+    n3 = random(0, 5);
+    n4 = random(0, 5);
     wordLengthF = random(1.5, 5);
     keyWasPressedN = true;
     }
@@ -155,53 +172,72 @@ void Name() {
   if (n1 < 4 && n1 > 3){
     N1 = 3;
   }
-  if (n1 < 5 && n1 > 4){
+  if (n1 > 4){
     N1 = 4;
   }
-    if (n2 < 1){
+  
+  if (n2 < 1){
     N2 = 0;
   }
-  if (n2 < 2 && n1 > 1){
+  if (n2 < 2 && n2 > 1){
     N2 = 1;
   }
-  if (n2 < 3 && n1 > 2){
+  if (n2 < 3 && n2 > 2){
     N2 = 2;
   }
-  if (n2 < 4 && n1 > 3){
+  if (n2 < 4 && n2 > 3){
     N2 = 3;
   }
-  if (n2 < 5 && n1 > 4){
+  if (n2 > 4){
     N2 = 4;
   }
-    if (n3 < 1){
+  
+  if (n3 < 1){
     N3 = 0;
   }
-  if (n3 < 2 && n1 > 1){
+  if (n3 < 2 && n3 > 1){
     N3 = 1;
   }
-  if (n3 < 3 && n1 > 2){
+  if (n3 < 3 && n3 > 2){
     N3 = 2;
   }
-  if (n3 < 4 && n1 > 3){
+  if (n3 < 4 && n3 > 3){
     N3 = 3;
   }
-  if (n3 < 5 && n1 > 4){
+  if (n3 > 4){
     N3 = 4;
   }
-    if (n4 < 1){
+  
+  if (n4 < 1){
     N4 = 0;
   }
-  if (n4 < 2 && n1 > 1){
+  if (n4 < 2 && n4 > 1){
     N4 = 1;
   }
-  if (n4 < 3 && n1 > 2){
+  if (n4 < 3 && n4 > 2){
     N4 = 2;
   }
-  if (n4 < 4 && n1 > 3){
+  if (n4 < 4 && n4 > 3){
     N4 = 3;
   }
-  if (n4 < 5 && n1 > 4){
+  if (n4 > 4){
     N4 = 4;
+  }
+  
+    if (n5 < 1){
+    N5 = 0;
+  }
+  if (n5 < 2 && n5 > 1){
+    N5 = 1;
+  }
+  if (n5 < 3 && n5 > 2){
+    N5 = 2;
+  }
+  if (n5 < 4 && n5 > 3){
+    N5 = 3;
+  }
+  if (n5 < 5 && n5 > 4){
+    N5 = 4;
   }
 
 
@@ -218,42 +254,56 @@ Name2[2] = "Green";
 Name2[3] = "Yellow";
 Name2[4] = "Red";
 
-Name3[0] = "Desert";
-Name3[1] = "Jungle";
-Name3[2] = "Toxic";
-Name3[3] = "Forest";
-Name3[4] = "Arctic";
+Name3[0] = "Fast";
+Name3[1] = "Bald";
+Name3[2] = "Dotted";
+Name3[3] = "Plump";
+Name3[4] = "Plain";
 
-Name4[0] = "Frog";
-Name4[1] = "Toad";
-Name4[2] = "BullFrog";
-Name4[3] = "Tadpole";
-Name4[4] = "Salamander";
+Name4[0] = "Desert";
+Name4[1] = "Jungle";
+Name4[2] = "Toxic";
+Name4[3] = "Forest";
+Name4[4] = "Arctic";
+
+Name5[0] = "Frog";
+Name5[1] = "Toad";
+Name5[2] = "BullFrog";
+Name5[3] = "Tadpole";
+Name5[4] = "Salamander";
 
 
 textAlign(CENTER, BOTTOM);
 textSize(24);
 
 if (wordLengthI == 1){
-text (Name4[N4], width/2, 60);
+text (Name5[N5], width/2, 60);
 }
 
 if (wordLengthI == 2){
-text (Name4[N4], width/2 + 40, 60);
-text (Name3[N3], width/2 - 40, 60);
+text (Name5[N5], width/2 + 40, 60);
+text (Name4[N4], width/2 - 40, 60);
 }
 
 if (wordLengthI == 3){
-text (Name4[N4], width/2 + 80, 60);
-text (Name3[N3], width/2, 60);
-text (Name2[N2], width/2 - 80, 60);
+text (Name5[N5], width/2 + 80, 60);
+text (Name4[N4], width/2, 60);
+text (Name3[N3], width/2 - 80, 60);
 }
 
 if (wordLengthI == 4){
-text (Name4[N4], width/2 + 120, 60);
-text (Name3[N3], width/2 + 40, 60);
-text (Name2[N2], width/2 - 40, 60);
-text (Name1[N1], width/2 -120, 60);
+text (Name5[N5], width/2 + 120, 60);
+text (Name4[N4], width/2 + 40, 60);
+text (Name3[N3], width/2 - 40, 60);
+text (Name2[N2], width/2 - 120, 60);
+}
+
+if (wordLengthI == 5){
+text (Name5[N5], width/2 + 160, 60);
+text (Name4[N4], width/2 + 80, 60);
+text (Name3[N3], width/2, 60);
+text (Name2[N2], width/2 - 80, 60);
+text (Name1[N1], width/2 - 160, 60);
 }
   
   
