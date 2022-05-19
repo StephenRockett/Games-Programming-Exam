@@ -2,8 +2,10 @@ float changer = 0;
 float wordLengthF = 1;
 int wordLengthI = 1;
 
+float numF = 11;
 int num = 10;
 float [] tadpoleLength = new float[num];
+float [] offset = {0, 35, -35, 70, -70, 105, -105, 140, -140, 175};
 
 int N1 = 0;
 float n1 = 0;
@@ -20,6 +22,7 @@ String [] Name4 = new String[5];
   
 boolean keyWasPressedC;
 boolean keyWasPressedN;
+boolean keyWasPressedB;
 
 
 
@@ -60,24 +63,53 @@ void Colour(){
 
 void Body(){
   
+  if (keyPressed == true && keyWasPressedB == false){
+    if (key == ' '){
+    numF = random(1, 11);
+    keyWasPressedB = true;
+    }
+  }
+  if (keyPressed == false) {
+    keyWasPressedB = false;
+  }
+
   noFill();
   strokeWeight(2);
   
-  circle (width/2, height/2, 35);
-  
-  /* Test
-  circle (width/2, height/2 + 175, 35);
-    circle (width/2, height/2 + 140, 35);
-      circle (width/2, height/2 + 105, 35);
-        circle (width/2, height/2 + 70, 35);
-          circle (width/2, height/2 + 35, 35);
-  circle (width/2, height/2 - 0, 35);
-    circle (width/2, height/2 - 35, 35);
-      circle (width/2, height/2 - 70, 35);
-        circle (width/2, height/2 - 105, 35);
-   */
-        
+  if (numF < 2){
+    num = 1;
+  }
+  if (numF < 3 && numF > 2){
+    num = 2;
+  }
+  if (numF > 4 && numF < 3){
+    num = 3;
+  }
+  if (numF < 5 && numF > 4){
+    num = 4;
+  }
+  if (numF > 6 && numF < 5){
+    num = 5;
+  }
+  if (numF < 7 && numF > 6){
+    num = 6;
+  }
+  if (numF > 8 && numF < 7){
+    num = 7;
+  }
+  if (numF < 9 && numF > 8){
+    num = 8;
+  }
+  if (numF < 10 && numF > 9){
+    num = 9;
+  }
+  if (numF > 10){
+    num = 10;
+  }
 
+  for (int i = 0; i < num; i ++) { 
+    circle (width/2, height/2 + offset[i], 35);
+  }
   
 }
 
